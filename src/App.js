@@ -7,10 +7,8 @@ function App() {
     return (
         <div>
             <Nav />
-            <div className="flex">
-                <Player />
-                <List />
-            </div>
+            <Player />
+            <List />
         </div>
     );
 }
