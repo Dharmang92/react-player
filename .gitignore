@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#audio-server
+/audio-server/node_modules
+/audio-server/src/songs
+/audio-server/.env
