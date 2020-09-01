@@ -8,6 +8,7 @@ function App() {
     const [now, setNow] = useState("");
     const [songs, setSongs] = useState([]);
     const [clear, setClear] = useState(false);
+    const [folder, setFolder] = useState("");
     // const [lastArt, setLastArt] = useState("");
 
     const handleClick = (name) => {
@@ -47,6 +48,24 @@ function App() {
         setClear(true);
     };
 
+    const handleFolder = (text) => {
+        setFolder(text);
+    };
+
+    const handlePost = (e) => {
+        e.preventDefault();
+
+        fetch(`https://cors-anywhere.herokuapp.com/http://localhost:3001/`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: { folder },
+        })
+            .then((res) => res)
+            .catch((err) => console.log(err));
+    };
+
     useEffect(() => {
         fetch("http://localhost:3001", { mode: "cors" })
             .then((res) => res.json())
@@ -82,6 +101,8 @@ function App() {
                         // cover={lastArt}
                         searchFun={handleSearch}
                         clearFun={handleClear}
+                        folderFun={handleFolder}
+                        sendPost={handlePost}
                     />
                 </div>
 

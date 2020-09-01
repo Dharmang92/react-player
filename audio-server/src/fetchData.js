@@ -1,8 +1,9 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
 require("dotenv").config({ path: "../.env" });
 
-const folder = process.env.DIRECTORY;
+let folder = process.env.DIRECTORY || "D:/Music/";
 const fs = require("fs");
 const arr = [];
 
@@ -28,6 +29,13 @@ app.get("/:name", (req, res) => {
         // res.setHeader("Content-Type", "audio/mpeg");
         res.sendFile(folder + req.params.name);
     }
+});
+
+app.use(bodyParser());
+app.post("/", (req, res) => {
+    folder = req.body.folder;
+    console.log(req.body.folder);
+    res.send("success");
 });
 
 app.listen(3001, () => {

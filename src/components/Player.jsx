@@ -1,6 +1,6 @@
 import React from "react";
 
-function Player({ cover, searchFun, clearFun }) {
+function Player({ cover, searchFun, clearFun, folderFun, sendPost }) {
     return (
         <div>
             {/* <img src={cover} alt="album_art" /> */}
@@ -18,7 +18,7 @@ function Player({ cover, searchFun, clearFun }) {
                         type="text"
                         placeholder="Type song name to search"
                         onChange={(e) => searchFun(e.target.value)}
-                        className="p-2 mt-1 rounded-lg border-orange-300 hover:shadow-outline bg-yellow-400 placeholder-yellow-900"
+                        className="p-2 mt-1 rounded-lg border-orange-300 hover:shadow-outline bg-yellow-400 placeholder-yellow-900 text-center"
                     />
                     <div className="text-center p-1 mt-1">
                         <button
@@ -28,6 +28,18 @@ function Player({ cover, searchFun, clearFun }) {
                             Reset Search
                         </button>
                     </div>
+                </div>
+
+                <div>
+                    <form onSubmit={sendPost}>
+                        <input
+                            type="text"
+                            placeholder="Folder path to play songs"
+                            onChange={(e) => folderFun(e.target.value)}
+                            size="35"
+                            className="p-2 mt-8 rounded-lg hover:shadow-outline bg-orange-200 placeholder-orange-900 text-center"
+                        />
+                    </form>
                 </div>
             </div>
         </div>
