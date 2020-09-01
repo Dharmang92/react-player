@@ -1,15 +1,17 @@
 import React from "react";
 
-function Player({ name, cover, searchFun, clearFun }) {
+function Player({ cover, searchFun, clearFun }) {
     return (
         <div>
             {/* <img src={cover} alt="album_art" /> */}
             <div className="flex md:fixed w-full md:w-3/12 justify-center bg-red-400 p-2 md:h-screen items-center flex-col">
-                <img
-                    src="https://i.picsum.photos/id/672/200/200.jpg?hmac=Lxbn4Lr7MXAJeCswWkTG9-O-DaafCb75aUGSBrd3ZWU"
-                    alt=""
-                    className="h-32 p-1"
-                />
+                <div className="rounded border-white">
+                    <img
+                        src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                        alt="sample photo"
+                        className="h-32 p-1"
+                    />
+                </div>
 
                 <div>
                     <input
@@ -26,25 +28,6 @@ function Player({ name, cover, searchFun, clearFun }) {
                             Reset Search
                         </button>
                     </div>
-                </div>
-            </div>
-
-            <div className="fixed inline-block bottom-0 w-1/2 flex flex-col justify-center">
-                <div className="pb-2 text-center bg-black text-white py-1 rounded-t">
-                    {name ? (
-                        <div>{name}</div>
-                    ) : (
-                        <div>Click on any song to Play</div>
-                    )}
-                </div>
-                <div>
-                    <audio
-                        id="audio"
-                        className="w-full bg-black"
-                        autoPlay={name}
-                        controls
-                        src={`http://localhost:3001/${name}`}
-                    ></audio>
                 </div>
             </div>
         </div>

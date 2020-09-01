@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Nav from "./components/Nav";
 import Player from "./components/Player";
 import List from "./components/List";
+import Controls from "./components/Controls";
 
 function App() {
     const [now, setNow] = useState("");
@@ -44,7 +45,6 @@ function App() {
 
     const handleClear = () => {
         setClear(true);
-        return "";
     };
 
     useEffect(() => {
@@ -54,6 +54,8 @@ function App() {
                 setSongs(data.songs);
             })
             .catch((err) => console.log(err));
+
+        setClear(false);
     }, [clear]);
 
     // useEffect(() => {
@@ -84,9 +86,11 @@ function App() {
                 </div>
 
                 <div className="md:w-9/12 md:mt-16">
-                    <List clickFun={handleClick} songs={songs} />
+                    <List clickFun={handleClick} songs={songs} name={now} />
                 </div>
             </div>
+
+            {/* <Controls name={now} /> */}
         </div>
     );
 }
