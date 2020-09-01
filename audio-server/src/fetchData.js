@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-require("dotenv");
+require("dotenv").config({ path: "../.env" });
 
 const folder = process.env.DIRECTORY;
 const fs = require("fs");

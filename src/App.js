@@ -6,8 +6,8 @@ import List from "./components/List";
 function App() {
     const [now, setNow] = useState("");
     const [songs, setSongs] = useState([]);
+    const [clear, setClear] = useState(false);
     // const [lastArt, setLastArt] = useState("");
-    const [search, setSearch] = useState(false);
 
     const handleClick = (name) => {
         setNow(name);
@@ -30,22 +30,21 @@ function App() {
         //     });
     };
 
-    const handleSearch = (e, text) => {
-        e.preventDefault();
-        if (text === "") {
-            setSearch(false);
-        } else {
-            setSongs([
-                ...songs.filter((song) => {
-                    if (song.toLowerCase().includes(text)) {
-                        return song;
-                    } else {
-                        return null;
-                    }
-                }),
-            ]);
-            setSearch(true);
-        }
+    const handleSearch = (search) => {
+        const matchedSongs = songs.filter((song) => {
+            if (song.toLowerCase().includes(search)) {
+                return song;
+            } else {
+                return null;
+            }
+        });
+
+        setSongs([...matchedSongs]);
+    };
+
+    const handleClear = () => {
+        setClear(true);
+        return "";
     };
 
     useEffect(() => {
@@ -55,7 +54,7 @@ function App() {
                 setSongs(data.songs);
             })
             .catch((err) => console.log(err));
-    }, [search]);
+    }, [clear]);
 
     // useEffect(() => {
     //     document.addEventListener("keydown", (event) => {
@@ -80,6 +79,7 @@ function App() {
                         name={now}
                         // cover={lastArt}
                         searchFun={handleSearch}
+                        clearFun={handleClear}
                     />
                 </div>
 
