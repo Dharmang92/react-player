@@ -19,7 +19,7 @@ function App() {
         //         .slice(
         //             0,
         //             -4
-        //         )}&api_key=05298a2fd6f2054ac296614d71757c42&format=json`
+        //         )}&api_key=${API_KEY}&format=json`
         // )
         //     .then((res) => res.json())
         //     .then((data) => {
