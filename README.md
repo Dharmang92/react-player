@@ -12,4 +12,4 @@
 - Change folder directory present in fetchData.js inside audio-server so that nodejs knows which folder to serve.
 - Navigate to audio-server and run the local server using nodemon or node. Server running on PORT 3001
 - Navigate to src folder of the App and run the local react server. Server running on PORT 3000
-- Open http://localhost:3000/ and your favourite songs from your local computer. 😎
+- Open http://localhost:3000/ and play your favourite songs from your local computer. 😎
