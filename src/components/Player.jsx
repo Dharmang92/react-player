@@ -8,7 +8,7 @@ function Player({ cover, searchFun, clearFun, folderFun, sendPost }) {
                 <div className="rounded border-white">
                     <img
                         src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-                        alt="sample photo"
+                        alt="sample album art"
                         className="h-32 p-1"
                     />
                 </div>
