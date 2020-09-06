@@ -3,7 +3,7 @@
 #### Now just use your browser for playing songs instead of any other music player and free some workload from the computer. 😁😜
 *Working completely*
 
-image
+![Working Audio Player Screenshot](https://github.com/Dharmang92/react-player/blob/Change-Folder/audioplayer.png)
 
 # Information on Branches
 - Master Branch
