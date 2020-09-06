@@ -3,7 +3,7 @@
 Audio Player in React which plays local songs from the computer without any need of external music player.
 ## Now just use your browser for playing songs instead of any other music player and free some workload from the computer. 😁😜
 
-# INFO
+# Information on Branches
 - Master Branch
   - Standalone without custom styling on Chrome and Firefox for better viewing.
 - Change-Folder Branch
